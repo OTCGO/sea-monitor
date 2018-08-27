@@ -63,8 +63,14 @@ async function main () {
       当前未交易数，${rawmempool.length}\n
       可能交易拥堵，请注意
       `)
-    } else {
+    }
+
+    if (rawmempool.length < 10000) {
       isRawmemPool = false
+      sendMsg(`
+      当前未交易数，${rawmempool.length}\n
+      可能交易拥堵，请注意
+      `)
     }
   } catch (error) {
     console.log('error', error)
