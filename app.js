@@ -31,7 +31,7 @@ async function main () {
 
     const max = _.max([blockHeight, apiHeight, otcHeight])
 
-    const min = _.max([blockHeight, apiHeight, otcHeight])
+    const min = _.min([blockHeight, apiHeight, otcHeight])
     console.log('max', max)
 
     console.log('min', min)
