@@ -51,12 +51,26 @@ async function main () {
       apiHeight:${apiHeight}
       `)
     }
-  } catch (error) {
 
+    // getrawmempool
+    const rawmempool = await b.getRawmemPool()
+
+    console.log('rawmempool', rawmempool.length)
+    if (rawmempool.length > 10000) {
+      sendMsg(`
+      当前未交易数，${rawmempool.length}\n
+      可能交易拥堵，请注意
+      `)
+    }
+  } catch (error) {
+    console.log('error', error)
+    sendMsg(`
+    当前区块同步错误，请检查\n${error}
+    `)
   }
 }
 
-// main()
+main()
 schedule.scheduleJob('30 * * * * *', function () {
   console.log('script start')
   main()
