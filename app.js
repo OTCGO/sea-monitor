@@ -57,7 +57,7 @@ async function main () {
     const rawmempool = await b.getRawmemPool()
 
     console.log('rawmempool', rawmempool.length)
-    if (rawmempool.length > 10000) {
+    if (rawmempool.length > 10000 && !isRawmemPool) {
       isRawmemPool = true
       sendMsg(`
       当前未交易数，${rawmempool.length}\n
