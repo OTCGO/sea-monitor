@@ -1,7 +1,7 @@
-version: "3"
+version: "3.0.1"
 services:
   neo-monitor:
     container_name: neo-monitor
     restart: always
     build: .
-    image: neo-monitor:v1.0
+    image: neo-monitor:v1.0.1
