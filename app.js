@@ -43,7 +43,7 @@ async function heightCheck () {
     // apiHeight:${apiHeight}
     // `)
     // abs  > 10 send msg
-    if (Math.abs(max - min) > 10) {
+    if (Math.abs(max - min) > 150) {
       sendMsg(`
       当前区块同步错误，请检查\n
       blockHeight:${blockHeight}\n
